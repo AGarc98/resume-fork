@@ -10,7 +10,7 @@ jobs:
       DIR: .
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - name: hartman-resume
         uses: dante-ev/latex-action@latest
         with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
         with:
           path: github_artifacts
