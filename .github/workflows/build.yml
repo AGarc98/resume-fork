@@ -10,7 +10,7 @@ jobs:
       DIR: .
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: hartman-resume
         uses: dante-ev/latex-action@latest
         with:
@@ -23,7 +23,7 @@ jobs:
           mv ${{ env.DIR }}/CNAME ./github_artifacts/
           mv ${{ env.DIR }}/index.html ./github_artifacts/
       - name: Upload pdf as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: artifacts
           path: ./github_artifacts
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: actions/download-artifact@v2
         with:
           path: github_artifacts
